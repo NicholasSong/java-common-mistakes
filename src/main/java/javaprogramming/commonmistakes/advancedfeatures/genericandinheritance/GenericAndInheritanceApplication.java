@@ -95,6 +95,7 @@ class Child1 extends Parent {
 }
 
 
+//1、明确的泛型类型 2、使用Override注解
 class Child2 extends Parent<String> {
 
     @Override

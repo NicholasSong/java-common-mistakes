@@ -22,10 +22,12 @@ public class ReflectionIssueApplication {
     }
 
     public void wrong() throws Exception {
+        // 反射的通过Interger.TYPE 获取的是int.class
         getClass().getDeclaredMethod("age", Integer.TYPE).invoke(this, Integer.valueOf("36"));
     }
 
     public void right() throws Exception {
+        // 反射的时候需通过class 获取准确的反射方法
         getClass().getDeclaredMethod("age", Integer.class).invoke(this, Integer.valueOf("36"));
         getClass().getDeclaredMethod("age", Integer.class).invoke(this, 36);
     }
